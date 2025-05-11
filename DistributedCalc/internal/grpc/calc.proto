@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "DistributedCalc/internal/grpc";
+
+service CalcService {
+  rpc Calculate (CalcRequest) returns (CalcResponse);
+}
+
+message CalcRequest {
+  string expression = 1;
+}
+
+message CalcResponse {
+  double result = 1;
+  string error = 2;
+}
